@@ -1,0 +1,66 @@
+
+  <mat-toolbar color="accent">
+
+   <a
+   routerLink="/"
+    mat-icon-button 
+   class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    >
+    <mat-icon>menu_book</mat-icon>
+  </a>
+
+  <span>Examportal</span>
+  <span class="example-spacer"></span>
+
+  <a
+  *ngIf="!isLoggedIn"
+  [routerLink]="'/login'" 
+  mat-icon-button
+   class="example-icon favorite-icon" 
+   aria-label="Example icon-button with heart icon"
+   >
+   Login
+    
+</a>
+
+
+  <a
+  *ngIf="!isLoggedIn"
+	  [routerLink]="'/signup'"
+
+   mat-icon-button                                     
+   class="example-icon favorite-icon mr20 ml20" 
+   aria-label="Example icon-button with share icon"
+   >
+   Register
+</a>
+
+<a
+  *ngIf="isLoggedIn"
+  (click)="logout()"
+
+   mat-icon-button                                     
+   class="example-icon favorite-icon mr20 ml20" 
+   aria-label="Example icon-button with share icon"
+   >
+   Logout
+</a>
+  
+<button
+  *ngIf="isLoggedIn && user"
+  
+    style="margin-right: 50px;"
+   mat-icon-button                                     
+   class="example-icon favorite-icon  ml20 " 
+   aria-label="Example icon-button with share icon"
+   >
+   {{user.username}}
+</button>
+  
+
+
+
+</mat-toolbar>
+
+<!-- mat-icon-button if we not used this thenit shows as regular button -->
